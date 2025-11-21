@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Arabic";
+  src: url("/arabic.otf") format("opentype");
+  font-display: swap;
+}
+
+@theme {
+  /* --color-mint-500: oklch(0.72 0.11 178); */
+  --color-desert-sand: #ebd8b7;
+  --color-midnight: #0b2239;
+  --color-gold: #d9a441;
+
+  --font-arabic: "Arabic", serif;
+  --font-display: "Macondo", cursive;
+}
+
+/* add arabian-night themed utilities */
+body {
+  @apply bg-linear-to-b from-midnight to-[#112E47] text-desert-sand;
+  font-family: "Macondo", cursive;
+  height: 100vh;
+  /* 1. Set the image */
+  background-image: url("/arabian_bg_1.webp");
+
+  /* 2. Scale the image to cover the entire container */
+  background-size: cover;
+
+  /* 3. Center the image so the focal point is visible */
+  /* background-position: center; */
+
+  /* 4. Stop the image from repeating (tiling) */
+  background-repeat: no-repeat;
+
+  /* 5. Optional: Fix the image so it doesn't scroll with the page */
+  background-attachment: fixed;
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px var(--color-gold), 0 0 20px var(--color-gold);
+  }
+
+  .shadow-blur-spread {
+    box-shadow: -10px 0 40px 10px rgba(11, 34, 57, 0.9);
+  }
+}
